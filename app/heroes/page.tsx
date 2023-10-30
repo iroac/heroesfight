@@ -1,4 +1,6 @@
+import PaginationControls from '@/components/pagination/paginationControl'
 import Image from 'next/image'
+
 
 
 async function getData() {
@@ -7,11 +9,22 @@ async function getData() {
     if (!res.ok) {
       throw new Error('Failed to fetch data')
     }
+    
     return res.json()
   }
    
-  export default async function Page() {
-    const data = await getData()
+  export default async function Page({ searchParams }: {searchParams: { [key: string ]: string | string[] | undefined }}) {
+    
+    const page = searchParams['page'] ?? '1'
+    const per_page = searchParams['per_page'] ?? '50 '
+
+    const start = (Number(page) - 1) * Number(per_page)
+    const end = start + Number(per_page)
+    
+    
+    const data: any = await getData()
+    const heroes: any = data.slice(start, end)
+        
    
     return <main>
         
@@ -19,17 +32,18 @@ async function getData() {
         
         
             <div className=' flex justify-center items-center flex-wrap flex-shrink gap-3 w-screen '  >
-                {data.map((item: any, index: any) => {
-                    if(item.id <= 10) {
+                {heroes.map((item: any, index: any) => {
+                    
                         let sum = item.powerstats.intelligence + item.powerstats.strength + item.powerstats.speed + item.powerstats.durability + item.powerstats.power + item.powerstats.combat
                         return <div className='text-white flex flex-col justify-center items-center ' key={index}>
                           <Image alt={item.name} src={item.images.sm} width={120} height={560} />  
                             <h1>{item.name}</h1>
                             <h2>{sum}</h2>
                             </div>
-                    } 
+                    
                 })}
             </div>
+            <PaginationControls hasNextPage={end < data.length} hasPrevPage={start > 0}  />
         
     </main>
   }
