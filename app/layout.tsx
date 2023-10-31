@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Luckiest_Guy } from 'next/font/google'
 import './globals.css'
 import NavBar from '../components/navbar/navbar'
 
-const inter = Inter({ subsets: ['latin'] })
+const luckiestGuy = Luckiest_Guy({ subsets: ['latin'], variable: "--font-luckiest-guy", weight: '400', preload: true })
 
 export const metadata: Metadata = {
   title: 'HeroFight',
@@ -13,9 +13,10 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <html lang="pt">
-      <body className={` bg-black w-screen h-screen ${inter.className}`}>
+      <body className={` bg-black w-screen h-screen ${luckiestGuy.variable}`}>
         <NavBar />
         {children}
+        <div className='modal-container'></div>
         </body>
     </html>
   )

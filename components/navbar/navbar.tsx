@@ -4,11 +4,13 @@ import Typography from '@mui/material/Typography'
 export default function NavBar() {
 return ( 
     <>
-          <nav className='flex flex-row gap-5 items-center justify-between bg-black mb-8 w-screen h-auto p-3 '> 
-          <div className='flex flex-row justify-center items-center gap-5 ' >
-      <h1 className='text-2xl text-red-500 font-bold'>PLAY</h1>   
-      <Typography variant="body1" color="white">CARTAS</Typography>
-      </div>
+          <nav className='flex flex-row gap-5 items-start justify-between bg-black mb-8 w-screen h-auto p-6 '> 
+          
+          <div className='flex flex-row gap-2 ' >
+          <h1 className=' text-blue-500 text-4xl font-luckiestGuy ' >Heroes</h1>
+          <h1 className=' text-red-500  text-4xl font-luckiestGuy ' >Fight</h1>
+          </div>
+      
 <SearchBar />
       </nav>
     </>
