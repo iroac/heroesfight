@@ -3,12 +3,15 @@ import Image from 'next/image'
 import PaginationControls from '@/components/pagination/paginationControl'
 
 
+
+
 export default async function HeroesList({search, page, per_page}: {search: string | string[]; page: string | string[]; per_page: string | string[];}) {
 
   const start = (Number(page) - 1) * Number(per_page)
   const end = start + Number(per_page)
   
-  
+
+  await new Promise (resolve => setTimeout(resolve, 10000))
   const data: any = await getData()
   const heroes: [] = data.slice(start, end)
     
@@ -16,7 +19,7 @@ export default async function HeroesList({search, page, per_page}: {search: stri
 
   return (
             <>
-            <div className=' flex justify-center items-center flex-wrap flex-shrink gap-3 w-screen' >
+            <div className=' flex justify-center items-center flex-wrap gap-3 w-screen' >
       {!search ? (
         heroes.map((item: any, index: any) => {
           let sum = item.powerstats.intelligence + item.powerstats.strength + item.powerstats.speed + item.powerstats.durability + item.powerstats.power + item.powerstats.combat;
