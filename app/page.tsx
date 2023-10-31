@@ -1,7 +1,7 @@
 import HeroesList from './heroeslist'
 import { Suspense } from 'react'
 import Skeleton from './skeleton'
-import getData from '../../utils/getData'
+import getData from '../utils/getData'
 
    
   export default async function Page({ searchParams }: {searchParams: { [key: string ]: string | string[] | undefined }}) {

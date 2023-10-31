@@ -24,7 +24,7 @@ export default function PaginationControls({ hasNextPage, hasPrevPage,}: Paginat
         className=' text-white p-1'
         disabled={!hasPrevPage}
         onClick={() => {
-          router.push(`heroes/?page=${Number(page) - 1}&per_page=${per_page}`)
+          router.push(`/?page=${Number(page) - 1}&per_page=${per_page}`)
         }}>
        <ArrowBackIosIcon/>
       </IconButton>
@@ -33,7 +33,7 @@ export default function PaginationControls({ hasNextPage, hasPrevPage,}: Paginat
         className=' text-white p-1'
         disabled={!hasNextPage}
         onClick={() => {
-          router.push(`heroes/?page=${Number(page) + 1}&per_page=${per_page}`)
+          router.push(`/?page=${Number(page) + 1}&per_page=${per_page}`)
         }}>
         <ArrowForwardIosIcon/>
       </IconButton>

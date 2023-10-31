@@ -42,7 +42,7 @@ export default function Modal({hero1, hero2, onClose}: {hero1: any, hero2: any, 
         </div> 
         </div>
 
-<div className=' flex flex-row justify-between items-center w-4/12 pt-10 ' >
+<div className=' flex flex-row justify-between items-center sm:w-4/12 w-6/12 sm:text-ml text-sm pt-10 ' >
         <div className='flex flex-col justify-center gap-1 items-center ' > 
                 <div className=' flex flex-row justify-center items-center gap-1  ' > <h1>{hero1.powerstats.combat}</h1> { hero1.powerstats.combat > hero2.powerstats.combat ? <AiFillCaretUp className=" text-green-500 " /> : <AiFillCaretDown className=" text-red-600 " /> } </div>
                 <div className=' flex flex-row justify-center items-center gap-1  ' > <h1>{hero1.powerstats.durability}</h1> { hero1.powerstats.durability > hero2.powerstats.durability ? <AiFillCaretUp className=" text-green-500 " /> : <AiFillCaretDown className=" text-red-600 " /> } </div>

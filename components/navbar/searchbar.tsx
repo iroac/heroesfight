@@ -14,9 +14,9 @@ const [query] = useDebounce(text, 700)
 
 useEffect(() => {
     if(!query) {
-        router.push('/heroes')
+        router.push('/')
     } else {
-        router.push(`/heroes?search=${query}`)
+        router.push(`/?search=${query}`)
     }
 }, [query])
 
