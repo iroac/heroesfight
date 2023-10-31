@@ -84,7 +84,7 @@ export default function Modal({hero1, hero2, onClose}: {hero1: any, hero2: any, 
     </div>
 
 <div className='flex justify-end pt-6' >
-        <Button onClick={() => onClose()} variant="text" className=' text-xl font-luckiestGuy hover:text-blue-500 text-red-500 transition duration-500 ' >NEW FIGHT</Button>
+        <Button onClick={() => onClose()} variant="text" sx={{ fontSize: 'text-xl', fontFamily: 'var(--font-luckiest-guy)', '&:hover': { color: 'blue-500', transition: 'color 500ms ease-in-out' }, color: 'red-500', }}>NEW FIGHT</Button>
         </div>
 
         </div>

@@ -1,3 +1,7 @@
+# HeroFight
+
+Uma aplicação front-end de batalha de super-heróis utilizando primariamente Next.js 13, MUI, Tailwind.
+
 ## Features
 
 - Listagem de heróis
