@@ -21,7 +21,8 @@ export default function PaginationControls({ hasNextPage, hasPrevPage,}: Paginat
   return (
     <div className='flex flex-row justify-center items-center mt-10 gap-2'>
       <IconButton
-        className=' text-white p-1'
+      sx={{ color: 'white' }}
+        className=' text-white  p-1'
         disabled={!hasPrevPage}
         onClick={() => {
           router.push(`/?page=${Number(page) - 1}&per_page=${per_page}`)
@@ -30,6 +31,7 @@ export default function PaginationControls({ hasNextPage, hasPrevPage,}: Paginat
       </IconButton>
 
       <IconButton
+      sx={{ color: 'white' }}
         className=' text-white p-1'
         disabled={!hasNextPage}
         onClick={() => {
